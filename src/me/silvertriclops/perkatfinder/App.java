@@ -72,6 +72,11 @@ public class App extends JFrame {
 		gbc_tfEmail.gridy = 0;
 		panel_1.add(tfEmail, gbc_tfEmail);
 		tfEmail.setColumns(10);
+		tfEmail.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				tfPassword.requestFocus();
+			}
+		});
 		
 		JLabel lblPassword = new JLabel("Password");
 		GridBagConstraints gbc_lblPassword = new GridBagConstraints();
@@ -87,6 +92,7 @@ public class App extends JFrame {
 		gbc_tfPassword.gridx = 1;
 		gbc_tfPassword.gridy = 1;
 		panel_1.add(tfPassword, gbc_tfPassword);
+		tfPassword.addActionListener(submit);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new EmptyBorder(5, 0, 5, 0));
